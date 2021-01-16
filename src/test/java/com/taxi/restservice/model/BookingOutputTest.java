@@ -1,6 +1,5 @@
-package com.example.restservice.model;
+package com.taxi.restservice.model;
 
-import com.example.restservice.model.BookingOutput;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;

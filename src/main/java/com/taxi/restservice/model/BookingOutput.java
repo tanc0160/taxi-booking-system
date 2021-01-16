@@ -1,4 +1,4 @@
-package com.example.restservice.model;
+package com.taxi.restservice.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

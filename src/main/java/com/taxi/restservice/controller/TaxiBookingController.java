@@ -1,10 +1,10 @@
-package com.example.restservice.controller;
+package com.taxi.restservice.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.restservice.model.BookingInput;
-import com.example.restservice.model.BookingOutput;
+import com.taxi.restservice.model.BookingInput;
+import com.taxi.restservice.model.BookingOutput;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
