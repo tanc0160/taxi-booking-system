@@ -50,12 +50,24 @@ When called will reset all cars data back to the initial state regardless of car
 ## Run the application
 Please use Maven, you can run the application by using
 
-#### `mvnw spring-boot:run`
+##### `mvnw spring-boot:run`
 
 Alternatively, you can build the JAR file with ./mvnw clean package and then run the JAR file, as follows:
 
-#### `./mvnw clean package`
-#### `java -jar target/rest-service-0.0.1-SNAPSHOT.jar`
+##### `./mvnw clean package`
+##### `java -jar target/rest-service-0.0.1-SNAPSHOT.jar`
+
+## Run the application using Docker
+
+You also need Docker, which only runs on 64-bit machines
+
+Build the docker image
+
+##### `./mvnw spring-boot:build-image -Dspring-boot.build-image.imageName=tanc0160/taxi-booking-system`
+
+Run docker image
+
+##### `docker run --memory="2g" -e "SPRING_PROFILES_ACTIVE=prod" -p 8080:8080 -t tanc0160/taxi-booking-system`
 
 ## Integration Tests
 
