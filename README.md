@@ -41,11 +41,11 @@ The system should pick the nearest available car to the customer location and re
 
 #### `POST /api/tick`
 
-To facilitate the review of this exercise, your service should expose `/api/tick` REST endpoint, when called should advance your service time stamp by 1 time unit.
+When called should advance your service time stamp by 1 time unit.
 
 #### `PUT /api/reset`
 
-Your service should also provide `/api/reset` REST endpoint, when called will reset all cars data back to the initial state regardless of cars that are currently booked.
+When called will reset all cars data back to the initial state regardless of cars that are currently booked.
 
 ## Run the application
 Please use Maven, you can run the application by using
