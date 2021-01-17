@@ -1,5 +1,7 @@
 # taxi-booking-system
 
+## 4 REST APIs
+
 #### `GET /api/book`
 Get history of booking input received by the system
 
@@ -44,3 +46,13 @@ To facilitate the review of this exercise, your service should expose `/api/tick
 #### `PUT /api/reset`
 
 Your service should also provide `/api/reset` REST endpoint, when called will reset all cars data back to the initial state regardless of cars that are currently booked.
+
+## Run the application
+Please use Maven, you can run the application by using ./mvnw spring-boot:run. Alternatively, you can build the JAR file with ./mvnw clean package and then run the JAR file, as follows:
+
+#### `java -jar target/rest-service-0.0.1-SNAPSHOT.jar`
+
+## Integration Tests
+
+python basic_solution_checker.py
+
