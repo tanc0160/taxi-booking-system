@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BookingOutput {
     private int carId;
-    private int totalTime;
+    private long totalTime;
 
-    public BookingOutput(int carId, int totalTime) {
+    public BookingOutput(int carId, long totalTime) {
         this.carId = carId;
         this.totalTime = totalTime;
     }
@@ -17,7 +17,7 @@ public class BookingOutput {
     }
 
     @JsonProperty("total_time")
-    public int getTotalTime() {
+    public long getTotalTime() {
         return totalTime;
     }
 }

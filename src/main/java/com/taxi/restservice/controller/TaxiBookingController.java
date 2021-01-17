@@ -1,36 +1,46 @@
 package com.taxi.restservice.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.taxi.restservice.model.BookingInput;
 import com.taxi.restservice.model.BookingOutput;
+import com.taxi.restservice.model.BookingServiceOutput;
+import com.taxi.restservice.service.BookingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 @RequestMapping("/api")
 public class TaxiBookingController {
+    @Autowired
+    private BookingService service;
 
-    private List<BookingInput> list = new ArrayList<>();
+    private AtomicLong curTime = new AtomicLong();
+
 
     @GetMapping("/book")
-    public List<BookingInput> greeting() {
-        return list;
+    public List<BookingInput> booking() {
+        return service.getHistory();
     }
 
     @PostMapping("/book")
     BookingOutput book(@RequestBody BookingInput bookingInput) {
-        list.add(bookingInput);
-        return new BookingOutput(1, 100);
+        service.addBookingRecord(bookingInput);
+        return service.book(
+                bookingInput.getSource(),
+                bookingInput.getDestination(),
+                curTime.get()
+        ).map(BookingServiceOutput::toBookingOutput).orElse(null);
     }
 
     @PutMapping("/reset")
     public void reset() {
-        list = new ArrayList<>();
+        service.reset();
     }
 
     @PostMapping("/tick")
-    int tick() {
-        return list.size();
+    public void tick() {
+        service.updateAllCarPositions(curTime.incrementAndGet());
     }
 }
