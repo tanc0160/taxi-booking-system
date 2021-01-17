@@ -50,7 +50,7 @@ When called will reset all cars data back to the initial state regardless of car
 ## Run the application
 Please use Maven, you can run the application by using
 
-##### `mvnw spring-boot:run`
+##### `./mvnw spring-boot:run`
 
 Alternatively, you can build the JAR file with ./mvnw clean package and then run the JAR file, as follows:
 
