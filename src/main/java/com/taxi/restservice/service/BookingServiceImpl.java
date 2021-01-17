@@ -28,6 +28,10 @@ public class BookingServiceImpl implements BookingService {
         history = new ArrayList<>();
     }
 
+    public List<Car> getCars() {
+        return cars;
+    }
+
     public void addBookingRecord(final BookingInput bookingInput) {
         history.add(bookingInput);
     }

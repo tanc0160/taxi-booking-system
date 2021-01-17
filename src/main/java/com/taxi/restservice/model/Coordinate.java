@@ -16,4 +16,17 @@ public class Coordinate {
     public int getY() {
         return y;
     }
+
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Coordinate)) {
+            return false;
+        }
+        final Coordinate c = (Coordinate) o;
+        return c.getY() == y
+                && c.getX() == x;
+    }
 }

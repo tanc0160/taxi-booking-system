@@ -14,4 +14,8 @@ public class BookingServiceOutput {
     public BookingOutput toBookingOutput() {
         return new BookingOutput(car.getCarId(), totalTime);
     }
+
+    public Car getCar() {
+        return car;
+    }
 }

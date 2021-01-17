@@ -1,7 +1,6 @@
 package com.taxi.restservice.model;
 
 import java.util.Optional;
-import java.util.OptionalInt;
 
 public class Car {
 

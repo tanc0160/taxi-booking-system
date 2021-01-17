@@ -19,5 +19,6 @@ public class BookingOutputTest {
 
         final String dtoAsString = mapper.writeValueAsString(bookingOutput);
         assertThat(dtoAsString, containsString("car_id"));
+        assertThat(dtoAsString, containsString("total_time"));
     }
 }
