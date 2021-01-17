@@ -48,8 +48,13 @@ To facilitate the review of this exercise, your service should expose `/api/tick
 Your service should also provide `/api/reset` REST endpoint, when called will reset all cars data back to the initial state regardless of cars that are currently booked.
 
 ## Run the application
-Please use Maven, you can run the application by using ./mvnw spring-boot:run. Alternatively, you can build the JAR file with ./mvnw clean package and then run the JAR file, as follows:
+Please use Maven, you can run the application by using
 
+#### `mvnw spring-boot:run`
+
+Alternatively, you can build the JAR file with ./mvnw clean package and then run the JAR file, as follows:
+
+#### `./mvnw clean package`
 #### `java -jar target/rest-service-0.0.1-SNAPSHOT.jar`
 
 ## Integration Tests
