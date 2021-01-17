@@ -21,13 +21,17 @@ def book(source, destination, expected):
         headers=head,
         data=json.dumps(data)
     )
-
-    check_car(expected, json.loads(response.content.decode('utf-8')))
+    check_car(expected, {} if len(response.content) == 0 else json.loads(response.content.decode('utf-8')))
 
 
 def check_car(expected, actual):
     test_string = 'expected: {}, actual: {}'.format(expected, actual)
     errors = []
+
+    
+    if (len(expected) == 0 and len(actual) == 0):
+        print('success - {}'.format(test_string))
+        return
 
     if 'car_id' not in actual or 'total_time' not in actual:
         print('FAILED!!! - {} - car_id or total_time missing'.format(test_string))
@@ -50,3 +54,7 @@ if __name__ == '__main__':
     book({'x': 1, 'y': 1}, {'x': 5, 'y': 5}, {'car_id': 2, 'total_time': 10})
     tick()
     book({'x': -1, 'y': 1}, {'x': 5, 'y': 10}, {'car_id': 3, 'total_time': 17})
+    book({'x': 1, 'y': 0}, {'x': 1, 'y': 1}, {})
+    tick()
+    book({'x': 1, 'y': 0}, {'x': 1, 'y': 1}, {'car_id': 1, 'total_time': 2})
+    book({'x': 1, 'y': 0}, {'x': 1, 'y': 1}, {})
