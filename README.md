@@ -1,6 +1,6 @@
 # taxi-booking-system
 
-####  GET  /api/book
+#### `GET /api/book`
 Get history of booking input received by the system
 
 #### `POST /api/book`
